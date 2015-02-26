@@ -1,0 +1,145 @@
+// Variables declaration
+
+//== Colors
+
+$main-background:       #f6f6f6;
+$menu-background:       #353535;
+$menu-border-top:       #3f3f3f;
+$menu-border-bottom:    #232323;
+$logo-background:       #282828;
+
+//== EndOf Colors
+
+//== Fonts
+
+$font-family: 'Open Sans', sans-serif, Arial, Tahoma;
+$font-size: 1em;
+$main-font-color:       #282828;
+$main-font-color-rev:   #f6f6f6;
+$menu-font-color:       #5d5d5d;
+
+//== EndOf Fonts
+
+//== Icons font
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/fontawesome-webfont.woff') format('woff'),
+       url('../fonts/fontawesome-webfont.ttf') format('truetype'),
+       url('../fonts/fontawesome-webfont.svg?#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Defaul values 
+  font-family: 'FontAwesome';
+  font-weight: normal;
+  font-variant: normal;
+  line-height: inherit;
+
+[data-icon]:before, [data-icon-after]:after {
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-variant: normal;
+    line-height: inherit;
+    display: inline-block;
+    content: attr(data-icon);
+    position: absolute;
+    top:0;
+    left: 0;
+    speak: none;
+    text-transform: none;
+    text-rendering: auto;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+//== EndOf Icons font
+
+// EndOf variables declaration
+
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: $font-family;
+    font-size: $font-size;
+    padding: 0;
+    margin: 0;
+    background-color: $main-background;
+    color: $main-font-color;
+}
+
+header {
+    width: 100%;
+    height: 5em;
+    background-color: $menu-background;
+    color: $menu-font-color;
+    .logo {
+        width: 7.5em;
+        height: 5em;
+        line-height: 5em;
+        background-color: $logo-background;
+        h1 {
+            font-size: 4em;
+            text-align: center;
+        }
+    }
+}
+
+.mainFrame {
+    display: block;
+    min-height: 40em;
+    width: 100%;
+    background-color: inherit;
+
+    // Left menu
+    nav {    
+        height: 100%;
+        width: 7.5em;
+        background-color: $menu-background;
+        a {
+            position: relative;
+            display: block;
+            width: 7.5em;
+            height: 4em;
+            text-decoration: none;
+            text-align: center;
+            border-bottom: 1px solid $menu-border-bottom;
+            border-top: 1px solid $menu-border-top;
+            color: $menu-font-color;
+            
+            // Icons in menu
+            i {
+                line-height: 4em;
+                font-style: normal;
+                
+                &[data-icon]:before {
+//                    top: 0.5em;
+//                    left: 0.25em;
+//                    font-size: 2em ;
+                    text-align: center;
+                }
+            }
+            &:before {    // Colored left border
+                position: absolute;
+                content:'';
+                top:0;
+                left: 0;
+                width: 0.25em;
+                height: 100%;
+                background-color: red;
+                    
+            }
+
+        }
+    }
+    .content {
+//        text-shadow: 0 0 1px rgba(0,0,0,0.2);
+    }
+}
